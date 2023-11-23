@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M.Affan</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.min.css"
+        integrity="sha512-W/zrbCncQnky/EzL+/AYwTtosvrM+YG/V6piQLSe2HuKS6cmbw89kjYkp3tWFn1dkWV7L1ruvJyKbLz73Vlgfg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <!-- add icon link -->
+    <link rel="icon" href="ma-monogram-logo-vector-33144393-removebg-preview.png" type="image/x-icon">
+</head>
+
+<body>
+    <header class="header">
+        <a href="" class="logo"><img src="ma-monogram-logo-vector-33144393-removebg-preview.png" alt=""></a>
+        <input type="checkbox" id="check">
+        <label for="check" class="icons">
+            <i class='bx bx-menu' id="menu-icon"></i>
+            <i class='bx bx-x' id="close-icon"></i>
+        </label>
+        <nav class="navbar">
+            <a href="" style="--i:0;">Home</a>
+            <a href="#About" style="--i:1;">About</a>
+            <a href="#services" style="--i:3;">Services</a>
+            <a href="#contact" style="--i:2;">Contact</a>
+
+        </nav>
+    </header>
+
+    <div class="section">
+        <div class="about">
+            <h2>Hi I'm</h2>
+            <h1>Muhammad Affan</h1>
+
+            <div class="wrapper">
+                <span> And I'm <span class="multi"></span></span>
+            </div>
+
+            <div class="icon">
+                <a href="https://www.facebook.com/" target=”_blank”target=”_blank”target=”_blank”><i
+                        class='bx bxl-facebook'></i></a>
+                <a href="https://instagram.com/affan6095?igshid=OGQ5ZDc2ODk2ZA==" target=”_blank”target=”_blank”><i
+                        class='bx bxl-instagram'></i></a>
+                <a
+                    href="https://www.linkedin.com/in/muhammad-affan-239236264?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i
+                        class='bx bxl-linkedin' target=”_blank”target=”_blank”></i></a>
+                <a href="https://wa.me/+923120620326" target=”_blank”target=”_blank”><i class='bx bxl-whatsapp'></i></a>
+            </div>
+            <div class="pic"><img src="Affan-pic.jpg" alt=""></div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.js"></script>
+        <script>
+            var typingEffect = new Typed(".multi", {
+                strings: ["Web Developer", "Coder"],
+                loop: true,
+                typeSpeed: 100,
+                backSpeed: 80,
+                startDelay: 1000,
+                backDelay: 1500
+            })
+        </script>
+    </div>
+    <div class="btnn">
+        <a href="https://wa.me/+923120620326" target=”_blank”> <button type="button"
+                class="btn btn-outline-warning">Let's Talk</button></a>
+    </div>
+    <div class="more" id="About">
+        <h1>About Me</h1>
+        <p> I'm Front end Web developer. I know html css and javascript. <br> I made many self projects. I'm doing BS
+            Computer Science <br>From Islamia University Bahawalpur. </p>
+    </div>
+    <div class="more" id="servi">
+        <div id="ser">
+            <h1>What Can i Do for you</h1>
+        </div>
+        <p> I'm a skilled frontend web developer with a passion for <br> creating visually appealing and user-friendly
+            websites. <br> My expertise in HTML, CSS, and JavaScript allows me to <br> craft modern and responsive
+            designs tailored to your <br> brand. I focus on seamless navigation and responsive <br> websites, ensuring
+            an outstanding user experience <br> across devices. </p>
+    </div>
+
+    <div id="services">
+        <div class="prog">
+
+            <body>
+                <div class="progress-bar-container">
+                    <h2>
+                        <i class='bx bxl-html5'></i>
+
+                    </h2>
+                    <div class="progress-bar html">
+                        <progress id="html" min="0" max="100" value="92"></progress>
+                    </div>
+                    <label for="html"">HTML</label>
+            </div>
+            <div class=" progress-bar-container">
+                        <h2>
+                            <i class='bx bxl-css3'></i>
+
+                        </h2>
+                        <div class="progress-bar css">
+                            <progress id="css" min="0" max="100" value="70"></progress>
+                        </div>
+                        <label for="css">CSS</label>
+                </div>
+                <div class="progress-bar-container">
+                    <h2>
+                        <i class='bx bxl-bootstrap'></i>
+
+                    </h2>
+                    <div class="progress-bar boot">
+                        <progress id="boot" min="0" max="100" value="70"></progress>
+                    </div>
+                    <label for="boot">BootStrap</label>
+                </div>
+                <div class="progress-bar-container">
+                    <h2>
+                        <i class='bx bxl-javascript'></i>
+
+                    </h2>
+                    <div class="progress-bar js">
+                        <progress id="js" min="0" max="100" value="50"></progress>
+                    </div>
+                    <label for="js">JavaScript</label>
+                </div>
+        </div>
+
+    </div>
+    </div>
+    <div class="work">
+      <p>My projects</p>
+    <div class="container text-center">
+        <div class="row">
+          <div class="col">
+            <div class="card" style="width: 18rem;">
+                <img src="Guess.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Guess a Number</h5>
+                  <a href="https://affan1215.github.io/Guess-a-number/" target="_blank" class="btn btn-primary">Visit</a>
+                </div>
+              </div>
+          </div>
+          <div class="col">
+            <div class="card" style="width: 18rem;">
+                <img src="Tic.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Tic Tac</h5>
+                  <a href="https://affan1215.github.io/Tic-Tac-Game/" target="_blank" class="btn btn-primary">Visit</a>
+                </div>
+              </div>
+          </div>
+          <div class="col">
+            <div class="card" style="width: 18rem;">
+                <img src="age.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Age Calculator</h5>
+                  <a href="https://affan1215.github.io/Age-Calculator/" target="_blank" class="btn btn-primary">Visit</a>
+                </div>
+            </div>
+              </div>
+              <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="shop.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Shop Website</h5>
+                      <a href="https://affan1215.github.io/shop-web/" target="_blank" class="btn btn-primary">Visit</a>
+                    </div>
+                </div>
+                  </div>
+                  <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <img src="to do.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">To Do</h5>
+                          <a href="https://affan1215.github.io/To-do-task/" target="_blank" class="btn btn-primary">Visit</a>
+                        </div>
+                    </div>
+                      </div>
+                      <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <img src="dark.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title">Dark Theme</h5>
+                              <a href="https://affan1215.github.io/dark-theme/" target="_blank" class="btn btn-primary">Visit</a>
+                            </div>
+                        </div>
+                          </div>
+          </div>
+        </div>
+    </div>
+ 
+    <footer class="foot">
+        <div class="icon-bot">
+            <a href="https://www.facebook.com/" target=”_blank”><i class='bx bxl-facebook'></i></a>
+            <a href="https://instagram.com/affan6095?igshid=OGQ5ZDc2ODk2ZA==" target=”_blank”><i
+                    class='bx bxl-instagram'></i></a>
+            <a
+                href="https://www.linkedin.com/in/muhammad-affan-239236264?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i
+                    class='bx bxl-linkedin' target=”_blank”></i></a>
+            <a href="https://wa.me/+923120620326" target=”_blank”><i class='bx bxl-whatsapp'></i></a>
+        </div>
+    </footer>
+</body>
+
+</html>
