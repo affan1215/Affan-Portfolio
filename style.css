@@ -1,14 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
-body{
-    font-family: 'Poppins', sans-serif;
-    scroll-behavior: smooth;
+body {
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
 }
-.section{
+.section {
   padding-top: 100px;
 }
 
@@ -16,770 +16,766 @@ body{
 Navbar
 */
 
-.header{
-    position: fixed;
-    top: 0;
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.3rem 10%;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 100;
+}
+.header::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  top: 0;
+  left: 0;
+  z-index: -100;
+}
+.logo {
+  font-size: 2rem;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+}
+.logo:hover {
+  text-decoration: none;
+  color: white;
+}
+#check {
+  display: none;
+}
+.navbar a {
+  font-size: 1.15rem;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 2.5rem;
+}
+.icons {
+  position: absolute;
+  right: 15%;
+  font-size: 2.8rem;
+  color: white;
+  cursor: pointer;
+  display: none;
+}
+@media (max-width: 992px) {
+  .header {
+    padding: 1.3rem 5%;
+  }
+}
+@media (max-width: 768px) {
+  .icons {
+    display: inline-flex;
+  }
+  #check:checked ~ .icons #menu-icon {
+    display: none;
+  }
+  #check:checked ~ .icons #close-icon {
+    display: block;
+  }
+  .logo {
+    margin-left: -50%;
+  }
+
+  .navbar {
+    position: absolute;
+    top: 100%;
     left: 0;
     width: 100%;
-    padding: 1.3rem 10%;
-  
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    z-index: 100;
-}
-.header::before{
-    content: '';
-    position: absolute;
+    height: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(50px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: 0.3s ease;
+  }
+  #check:checked ~ .navbar {
+    height: 17.7rem;
+  }
+
+  .navbar a {
+    display: grid;
     width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0,.1);
-    backdrop-filter: blur(5px);
-    top: 0;
-    left: 0;
-    z-index: -100;
-}
-.logo{
-    font-size: 2rem;
-    color: white;
-    text-decoration: none;
-    font-weight: 700;
-}
-.logo:hover{
-    text-decoration: none;
-    color:white;
-}
-#check{
+    font-size: 1.1rem;
+    margin: 1.5rem 0;
+    text-align: center;
+    transform: translateY(-50px);
+    transition: 0.3s ease;
+    opacity: 0;
+  }
+
+  #check:checked ~ .navbar a {
+    transform: translateY(0);
+    transition-delay: calc(0.15s * var(--i));
+    opacity: 1;
+  }
+  .icons #close-icon {
     display: none;
-}
-.navbar a{
-    font-size: 1.15rem;
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    margin-left: 2.5rem;
-}
-.icons{
-    position: absolute;
-    right: 15%;
-    font-size: 2.8rem;
-    color: white;
-    cursor: pointer;
+  }
+  .pic {
     display: none;
+    margin-right: -10px;
+  }
+  .about h2 {
+    font-size: 25px;
+  }
+  .about h1 {
+    font-size: 30px;
+  }
 }
-@media (max-width:992px) {
-    .header{
-        padding: 1.3rem 5%;
-    }
-}
-@media (max-width:768px){
-    .icons{
-        display: inline-flex;
-    }
-    #check:checked~.icons #menu-icon{
-        display: none;
-    }
-    #check:checked~.icons #close-icon{
-        display: block;
-    }
-    .logo{
-        margin-left: -50%;
-    }
-
-    .navbar{
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        height: 0;
-        background-color: rgba(0, 0,0, 0.1);
-        backdrop-filter: blur(50px);
-        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0,.1) ;
-        overflow: hidden;
-        transition: .3s ease;
-    }
-    #check:checked~.navbar{
-        height: 17.7rem;
-    }
-    
-    .navbar a{
-        display:grid;
-        width: 100%;
-        font-size: 1.1rem;
-       margin: 1.5rem 0;
-       text-align: center;
-       transform: translateY(-50px);
-       transition: .3s ease;
-       opacity: 0;
-    }
-    
-    #check:checked~.navbar a{
-        transform: translateY(0);
-        transition-delay:calc(.15s *var(--i));
-        opacity: 1;
-    }
-    .icons #close-icon{
-        display: none;
-    }
-    .pic{
-        display: none;
-        margin-right: -10px;
-    }
-    .about h2{
-        font-size: 25px;
-    }
-    .about h1{
-        font-size: 30px;
-    }
-}
-
-
-
 
 body {
-    background-color: #0c0808;
-    font-family: 'Poppins', sans-serif;
+  background-color: #0c0808;
+  font-family: "Poppins", sans-serif;
 }
-/*
-.navbar a {
-    color: yellow;
-}
-
-.navbar-brand {
-    font-weight: 600;
-    font-size: 130%;
-}
-
-.nav-item {
-    font-weight: 500;
-    font-size: 120%;
-    margin-left: 20px;
-
-}
-
-.nav-item a:hover {
-    box-shadow: 0 0 20px yellow;
-    border: none;
-    background-color: #505050;
-
-}
-*/
-.section{
-    padding-left: 50px;
+.section {
+  padding-left: 50px;
 }
 
 .wrapper {
-    position: absolute;
-    padding-top: 30px;
-    color: black;
-
+  position: absolute;
+  padding-top: 30px;
+  color: black;
 }
 
 span {
-    color: white;
-    font-size: 3.5vw;
-    font-weight: 400;
-    letter-spacing: 1px;
+  color: white;
+  font-size: 3.5vw;
+  font-weight: 400;
+  letter-spacing: 1px;
 }
 
 .multi {
-    font-weight: 800;
-    /*  color:#00a2ed;*/
-    color: yellow;
-    text-transform: capitalize;
+  font-weight: 800;
+  /*  color:#00a2ed;*/
+  color: yellow;
+  text-transform: capitalize;
 }
 
 .about {
-    margin-top: 70px;
-    margin-left: 20px;
+  margin-top: 70px;
+  margin-left: 20px;
 }
 
 .about h2 {
-    color: white;
-    margin-left: -1000px;
-    padding-bottom: 20px;
-    font-size: 40px;
-
+  color: white;
+  margin-left: -1000px;
+  padding-bottom: 20px;
+  font-size: 40px;
 }
 
 .about h1 {
-    color: yellow;
-    font-weight: 800;
-    letter-spacing: 1px;
+  color: yellow;
+  font-weight: 800;
+  letter-spacing: 1px;
 }
 
 .icon {
-    margin-left: 20px;
+  margin-left: 20px;
 }
 
 .icon a {
-    margin-top: 140px;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    height: 40px;
-    width: 40px;
-    font-size: 25px;
-    color: white;
-    /*border: 2px solid #0ef;*/
-    border: 2px solid yellow;
-    border-radius: 50%;
-    margin-left: 7px;
-    margin-bottom: 30px;
+  margin-top: 140px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 40px;
+  font-size: 25px;
+  color: white;
+  /*border: 2px solid #0ef;*/
+  border: 2px solid yellow;
+  border-radius: 50%;
+  margin-left: 7px;
+  margin-bottom: 30px;
 }
 
 .icon a:hover {
-
-    text-decoration: none;
-    color: black;
-    /*  background-color: cyan;
+  text-decoration: none;
+  color: black;
+  /*  background-color: cyan;
     box-shadow: 0 0 20px cyan; */
-    background-color: yellow;
-    box-shadow: 0 0 50px yellow;
+  background-color: yellow;
+  box-shadow: 0 0 50px yellow;
 }
 
 .pic img {
-    height: auto;
-    width: 300px;
-    border-radius: 50%;
-    float: right;
-    box-shadow: 0 0 100px yellowgreen;
+  height: auto;
+  width: 300px;
+  border-radius: 50%;
+  float: right;
+  box-shadow: 0 0 100px yellowgreen;
 }
 
 .pic {
-    margin-top: -300px;
-    margin-right: 120px;
+  margin-top: -300px;
+  margin-right: 120px;
 }
 
 .more h1 {
-    color: white;
-    font-weight: 700;
-    letter-spacing: 1px;
-    margin-top: 100px;
-    margin-left: 200px;
-    color: yellow;
-    font-size: 45px;
+  color: white;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-top: 100px;
+  margin-left: 200px;
+  color: yellow;
+  font-size: 45px;
 }
 
-.btnn{
-    padding-top: 350px;
-    padding-left: 120px;
+.btnn {
+  padding-top: 350px;
+  padding-left: 120px;
 }
-.btnn a:hover{
-    box-shadow: 0 0 100px yellow;
+.btnn a:hover {
+  box-shadow: 0 0 100px yellow;
 }
 
 .more p {
-    color: white;
-    font-weight: 500;
-    margin-top: 10px;
-    letter-spacing: 1px;
-    margin-left: 50px;
-    font-size: 20px;
-    font-family: 'Poppins', sans-serif;
+  color: white;
+  font-weight: 500;
+  margin-top: 10px;
+  letter-spacing: 1px;
+  margin-left: 50px;
+  font-size: 20px;
+  font-family: "Poppins", sans-serif;
 }
 
 .skill {
-    padding-top: 100px;
-    padding-bottom: 150px;
-    padding-left: 50px;
+  padding-top: 100px;
+  padding-bottom: 150px;
+  padding-left: 50px;
 }
 
 .skill .css i {
-    color: blue;
+  color: blue;
 }
 
 .skill .boot i {
-    color: purple;
+  color: purple;
+}
+.skill .laravel i {
+  color: rgb(190, 31, 31);
 }
 
 .skill .java i {
-    color: yellow;
+  color: yellow;
 }
 
 .skill i {
-    font-size: 40px;
-    color: red;
+  font-size: 40px;
+  color: red;
 }
 
 .skill h2 {
-    color: white;
-    font-size: 20px;
+  color: white;
+  font-size: 20px;
 }
 
 .progress {
-    width: 50%;
-    margin-top: -2px;
-
+  width: 50%;
+  margin-top: -2px;
 }
 
-
-
-.bdy{
-    display: flex;
-    background-color: yellow;
-    align-items: center;
-    min-height: 100vh;
-
+.bdy {
+  display: flex;
+  background-color: yellow;
+  align-items: center;
+  min-height: 100vh;
 }
 
-
-.foot h2{
-    color: white;
-    text-align: center;
+.foot h2 {
+  color: white;
+  text-align: center;
 }
-.cont h2{
-    color: white;
-    text-align: center;
-    margin-bottom: 13px;
+.cont h2 {
+  color: white;
+  text-align: center;
+  margin-bottom: 13px;
 }
-.form{
-    width: 40%;
-   margin-left: 30%;
-   background-color: yellow;
+.form {
+  width: 40%;
+  margin-left: 30%;
+  background-color: yellow;
 }
-.copy{
-    height: 40px;
-    width: 100%;
-    background-color: black;
-    color: white;
+.copy {
+  height: 40px;
+  width: 100%;
+  background-color: black;
+  color: white;
 }
-.copy h2{
-    font-size: 20px;
-    text-align: center;
-    padding-top: 10px;
+.copy h2 {
+  font-size: 20px;
+  text-align: center;
+  padding-top: 10px;
 }
 .icon-bot {
-    text-align: center;
+  text-align: center;
 }
 .icon-bot a {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    height: 35px;
-    width: 35px;
-    font-size: 22px;
-    color: white;
-    /*border: 2px solid #0ef;*/
-    border: 2px solid yellow;
-    border-radius: 50%;
-    margin-left: 7px;
-    margin-bottom: 30px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+  width: 35px;
+  font-size: 22px;
+  color: white;
+  /*border: 2px solid #0ef;*/
+  border: 2px solid yellow;
+  border-radius: 50%;
+  margin-left: 7px;
+  margin-bottom: 30px;
 }
-.icon-bot a:hover{
-    text-decoration: none;
-    color: black;
-    /*  background-color: cyan;
+.icon-bot a:hover {
+  text-decoration: none;
+  color: black;
+  /*  background-color: cyan;
     box-shadow: 0 0 20px cyan; */
-    background-color: yellow;
-    box-shadow: 0 0 50px yellow;
+  background-color: yellow;
+  box-shadow: 0 0 50px yellow;
 }
-
-
 
 /*
 Responsive 
 */
 
-
-@media  screen and  (max-width:768px){
-   #ser{
+@media screen and (max-width: 768px) {
+  #ser {
     margin-left: -100px;
     padding-top: 30px;
-   }
-    .more h1{
-        font-size: 23px;
-    }
-    .more p {
-        color: white;
-        font-weight: 500;
-        margin-top: 10px;
-        letter-spacing: 1px;
-   
-        font-size: 10px;
-        font-family: 'Poppins', sans-serif;
-    }
-    .more h1{ 
-       margin-top: 10px
-    }
-    .icon a {
-        margin-top: 100px;
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        height: 30px;
-        width: 30px;
-        font-size: 20px;
-        color: white;
-        /*border: 2px solid #0ef;*/
-        border: 2px solid yellow;
-        border-radius: 50%;
-        margin-left: 5px;
-    }
-    .icon{
-        margin-left: -10px;
-    }
-    .btnn{
-    padding-top: 20px;
-    padding-bottom: 20px;
-    }
-    .progress{
-        width: 70%;
-    }
-    .copy h2{
-        font-size: 16px;
-      }
-}
-@media  screen and (max-width:480px){
-    .section{
-        margin-top: -40px;
-    }
-    .more h1{
-        margin-left: 50px;
-    }
-    #ser{
-        margin-left: 0px;
-        padding-top: 50px;
-    }
-    .icon a {
-        margin-right: -10px;
-    }
-    .icon a {
-        margin-top: 80px;
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        height: 18px;
-        width: 18px;
-        font-size: 10px;
-        color: white;
-        /*border: 2px solid #0ef;*/
-        border: 1px solid yellow;
-        border-radius: 50%;
-        margin-left: 7px;
-    }
-    .more{
-        margin-left: -30px;
-      padding-top: 20px;
-    }
-    .more h1{
-        font-size: 15px;
-        margin-top: -10px;
-    }
-    .more {
-        font-size: 10px;
-        margin-bottom: -50px;
-    }
-    .more p{
-        font-size: 8px;
-   margin-left: 40px;
-    }
-    .about h2{
-        font-size: 20px;
-    }
-    .about h1{
-        font-size: 20px;
-    }
-    .skill i {
-        font-size: 20px;
-        color: red;
-    }
-    
-    .skill h2 {
-        color: white;
-        font-size: 10px;
-    }
-    .skill{
-        margin-bottom: -20px;
-   
-    }
-    .btnn{
-       padding-left: -30px;
-    }
-    .cont h2{
-        color: white;
-        text-align: center;
-        font-size: 22px;
-    }
-   
-}
-@media  screen and (max-width:480px){
-    #services{
-        display: none;
-    }
-    .work p{
-        
-        font-size: 18px;
-        padding-top: 30px;
-    }
-}
-@media  screen and  (max-width:880px){
-.pic{
-    margin-right: 100px;
-}
-.section h2{
-    margin-left: -500px;
-}
-}
-@media  screen and  (max-width:1120px){
-    .section h2{
-        margin-left: -500px;
-    }
-}
-@media  screen and  (max-width:600px){
-    .form{
-        margin-left: 0;
-        width: 80%;
-    }
-    .copy h2{
-        font-size: 12px;
-    }
-    .icon-bot {
-        text-align: center;
-    }
-    .icon-bot a {
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        height: 25px;
-        width: 25px;
-        font-size: 15px;
-        color: white;
-        /*border: 2px solid #0ef;*/
-        border: 2px solid yellow;
-        border-radius: 50%;
-        margin-left: 7px;
-    }
-    .icon-bot a:hover{
-        text-decoration: none;
-        color: black;
-        /*  background-color: cyan;
-        box-shadow: 0 0 20px cyan; */
-        background-color: yellow;
-        box-shadow: 0 0 50px yellow;
-    }
-    .section h2{
-        margin-left: -200px;
-    }
-    .do{
-        padding: 150px 10px;
-        color: white;
-        font-size: 20px;
-      }
-      .do h2{
-        font-size: 20px;
-      }
-      .do p{
-        font-size: 10px;
-        font-weight:normal;
-        letter-spacing: 1px;
-      }
-}
-@media  screen and  (max-width:350px){
-    .copy h2{
-      width: 100%;
-        font-size: 0.8rem;
-        text-align: center;
-    }
-    .btnn{
-        display: none;
-    }
-    .copy{
-        text-align: center;
-    }
-    .section{
-        margin-left: -20px;
-    }
-    .copy h2 {
-        font-size: 8px;
-    }
-}
-@media  screen and (max-width:400px){
-    .more h1{
-        margin-left: 50px;
-     }   
-}
-
-
-
-
-@property --progress-value {
-    syntax: '<integer>';
-    inherits: false;
-    initial-value: 0;
   }
-  
-  @keyframes html-progress {
-    to { --progress-value: 85; }
+  .more h1 {
+    font-size: 23px;
   }
-  
-  @keyframes css-progress {
-    to { --progress-value: 70; }
-  }
-  @keyframes boot-progress {
-    to { --progress-value: 70; }
-  }
-  @keyframes js-progress {
-    to { --progress-value: 50; }
-  }
-  
+  .more p {
+    color: white;
+    font-weight: 500;
+    margin-top: 10px;
+    letter-spacing: 1px;
 
-  .progress-bar {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    
-    /* to center the percentage value */
-    display: flex;
+    font-size: 10px;
+    font-family: "Poppins", sans-serif;
+  }
+  .more h1 {
+    margin-top: 10px;
+  }
+  .icon a {
+    margin-top: 100px;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
-  }
-  .prog {
-    font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif;
-    margin: 30px auto;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    max-width: 600px;
-  }
-  
-  .progress-bar::before {
-    counter-reset: percentage var(--progress-value);
-    content: counter(percentage) '%';
-  }
-  
-  .html {
-    background: 
-      radial-gradient(closest-side, rgb(143, 143, 105) 79%, transparent 80% 100%),
-      conic-gradient(red calc(var(--progress-value) * 1%), white 0);
-    animation: html-progress 2s 1 forwards;
+    height: 30px;
+    width: 30px;
+    font-size: 20px;
     color: white;
+    /*border: 2px solid #0ef;*/
+    border: 2px solid yellow;
+    border-radius: 50%;
+    margin-left: 5px;
   }
-  
-  .html::before {
-    animation: html-progress 2s 1 forwards;
+  .icon {
+    margin-left: -10px;
   }
-  
-  .css {
-    background: 
-    radial-gradient(closest-side, rgb(143, 143, 105) 79%, transparent 80% 100%),
-      conic-gradient(blue calc(var(--progress-value) * 1%), white 0);
-    animation: css-progress 2s 1 forwards;
+  .btnn {
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
-  
-  .css::before {
-    animation: css-progress 2s 1 forwards;
+  .progress {
+    width: 70%;
   }
-  
-  
-  .boot {
-    background: 
-    radial-gradient(closest-side, rgb(143, 143, 105) 79%, transparent 80% 100%),
-      conic-gradient(purple calc(var(--progress-value) * 1%), white 0);
-    animation: css-progress 2s 1 forwards;
+  .copy h2 {
+    font-size: 16px;
   }
-  
-  .boot::before {
-    animation: css-progress 2s 1 forwards;
+}
+@media screen and (max-width: 480px) {
+  .section {
+    margin-top: -40px;
   }
-  .js {
-    background: 
-    radial-gradient(closest-side, rgb(143, 143, 105) 79%, transparent 80% 100%),
-      conic-gradient(yellow calc(var(--progress-value) * 1%), white 0);
-    animation: js-progress 2s 1 forwards;
-    margin-left: -20px;
+  .more h1 {
+    margin-left: 50px;
   }
-  
-  .js::before {
-    animation: js-progress 2s 1 forwards;
+  #ser {
+    margin-left: 0px;
+    padding-top: 50px;
   }
-  
-  
-  
-  h2 {
+  .icon a {
+    margin-right: -10px;
+  }
+  .icon a {
+    margin-top: 80px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 18px;
+    width: 18px;
+    font-size: 10px;
+    color: white;
+    /*border: 2px solid #0ef;*/
+    border: 1px solid yellow;
+    border-radius: 50%;
+    margin-left: 7px;
+  }
+  .more {
+    margin-left: -30px;
+    padding-top: 20px;
+  }
+  .more h1 {
+    font-size: 15px;
+    margin-top: -10px;
+  }
+  .more {
+    font-size: 10px;
+    margin-bottom: -50px;
+  }
+  .more p {
+    font-size: 8px;
+    margin-left: 40px;
+  }
+  .about h2 {
+    font-size: 20px;
+  }
+  .about h1 {
+    font-size: 20px;
+  }
+  .skill i {
+    font-size: 20px;
+    color: red;
+  }
+
+  .skill h2 {
+    color: white;
+    font-size: 10px;
+  }
+  .skill {
+    margin-bottom: -20px;
+  }
+  .btnn {
+    padding-left: -30px;
+  }
+  .cont h2 {
+    color: white;
+    text-align: center;
+    font-size: 22px;
+  }
+}
+@media screen and (max-width: 480px) {
+  #services {
+    display: none;
+  }
+  .work p {
+    font-size: 18px;
+    padding-top: 30px;
+  }
+}
+@media screen and (max-width: 880px) {
+  .pic {
+    margin-right: 100px;
+  }
+  .section h2 {
+    margin-left: -500px;
+  }
+}
+@media screen and (max-width: 1120px) {
+  .section h2 {
+    margin-left: -500px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .form {
+    margin-left: 0;
+    width: 80%;
+  }
+  .copy h2 {
+    font-size: 12px;
+  }
+  .icon-bot {
     text-align: center;
   }
-  
-  progress {
-    visibility: hidden;
-    width: 0;
-    height: 0;
-  }
-  .prog h2{
+  .icon-bot a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 25px;
+    width: 25px;
+    font-size: 15px;
     color: white;
+    /*border: 2px solid #0ef;*/
+    border: 2px solid yellow;
+    border-radius: 50%;
+    margin-left: 7px;
   }
-  .prog i{
-    color: yellow;
+  .icon-bot a:hover {
+    text-decoration: none;
+    color: black;
+    /*  background-color: cyan;
+        box-shadow: 0 0 20px cyan; */
+    background-color: yellow;
+    box-shadow: 0 0 50px yellow;
   }
-  .prog{
-   padding-top: 100px;
-   padding-bottom: 50px;
+  .section h2 {
+    margin-left: -200px;
   }
-  .progress-bar-container{
-
-color: white;
-font-size: 25px;
-text-align: center;
-font-weight: 600;
-
-  }
-  .do{
+  .do {
     padding: 150px 10px;
     color: white;
+    font-size: 20px;
+  }
+  .do h2 {
+    font-size: 20px;
+  }
+  .do p {
+    font-size: 10px;
+    font-weight: normal;
     letter-spacing: 1px;
   }
-  .do h2{
-    font-size: 30px;
-    font-weight: 100;
-  }
-  .do p{
-    padding: 10px 50px;
-    letter-spacing: 1px;
-  }
- 
-  .foot{
-    margin-bottom: -120px;
-  }
-  #down{
-    padding-bottom: 30px;
-  }
-  #down button{
+}
+@media screen and (max-width: 350px) {
+  .copy h2 {
+    width: 100%;
+    font-size: 0.8rem;
     text-align: center;
-    color: white;
-    padding: 5px;
-    border-radius: 20%;
-    background-color: rgb(34, 34, 31);
-    margin-left: 50%;
   }
-.logo img{
-    width: 50px;
-    height: auto;
-    border-radius: 15%;
+  .btnn {
+    display: none;
+  }
+  .copy {
+    text-align: center;
+  }
+  .section {
+    margin-left: -20px;
+  }
+  .copy h2 {
+    font-size: 8px;
+  }
 }
-.work{
-    margin: auto;
-    padding-bottom:20px ;
+@media screen and (max-width: 400px) {
+  .more h1 {
+    margin-left: 50px;
+  }
 }
-.work .col{
-    margin-bottom: 20px;
+
+@property --progress-value {
+  syntax: "<integer>";
+  inherits: false;
+  initial-value: 0;
 }
-.work p{
-    margin-left: 40%;
-    margin-right: 40%;
-    font-size: 35px;
+
+@keyframes html-progress {
+  to {
+    --progress-value: 85;
+  }
+}
+@keyframes laravel-progress {
+  to {
+    --progress-value: 70;
+  }
+}
+
+@keyframes css-progress {
+  to {
+    --progress-value: 70;
+  }
+}
+@keyframes boot-progress {
+  to {
+    --progress-value: 70;
+  }
+}
+@keyframes js-progress {
+  to {
+    --progress-value: 50;
+  }
+}
+@keyframes laravel-progress {
+  to {
+    --progress-value: 70;
+  }
+}
+
+.progress-bar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+
+  /* to center the percentage value */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.prog {
+  font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif;
+  margin: 30px auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 600px;
+}
+
+.progress-bar::before {
+  counter-reset: percentage var(--progress-value);
+  content: counter(percentage) "%";
+}
+
+.html {
+  background: radial-gradient(
+      closest-side,
+      rgb(143, 143, 105) 79%,
+      transparent 80% 100%
+    ),
+    conic-gradient(red calc(var(--progress-value) * 1%), white 0);
+  animation: html-progress 2s 1 forwards;
+  color: white;
+}
+
+.html::before {
+  animation: html-progress 2s 1 forwards;
+}
+
+.css {
+  background: radial-gradient(
+      closest-side,
+      rgb(143, 143, 105) 79%,
+      transparent 80% 100%
+    ),
+    conic-gradient(blue calc(var(--progress-value) * 1%), white 0);
+  animation: css-progress 2s 1 forwards;
+}
+
+.css::before {
+  animation: css-progress 2s 1 forwards;
+}
+.laravel {
+  background: radial-gradient(
+      closest-side,
+      rgb(143, 143, 105) 79%,
+      transparent 80% 100%
+    ),
+    conic-gradient(rgb(129, 23, 23) calc(var(--progress-value) * 1%), white 0);
+  animation: laravel-progress 2s 1 forwards;
+}
+
+.laravel::before {
+  animation: laravel-progress 2s 1 forwards;
+}
+
+.boot {
+  background: radial-gradient(
+      closest-side,
+      rgb(143, 143, 105) 79%,
+      transparent 80% 100%
+    ),
+    conic-gradient(purple calc(var(--progress-value) * 1%), white 0);
+  animation: css-progress 2s 1 forwards;
+}
+
+.boot::before {
+  animation: css-progress 2s 1 forwards;
+}
+.js {
+  background: radial-gradient(
+      closest-side,
+      rgb(143, 143, 105) 79%,
+      transparent 80% 100%
+    ),
+    conic-gradient(yellow calc(var(--progress-value) * 1%), white 0);
+  animation: js-progress 2s 1 forwards;
+  margin-left: -20px;
+}
+
+.js::before {
+  animation: js-progress 2s 1 forwards;
+}
+
+h2 {
+  text-align: center;
+}
+
+progress {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+.prog h2 {
+  color: white;
+}
+.prog i {
+  color: yellow;
+}
+.prog {
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+.progress-bar-container {
+  color: white;
+  font-size: 25px;
+  text-align: center;
+  font-weight: 600;
+}
+.do {
+  padding: 150px 10px;
+  color: white;
+  letter-spacing: 1px;
+}
+.do h2 {
+  font-size: 30px;
+  font-weight: 100;
+}
+.do p {
+  padding: 10px 50px;
+  letter-spacing: 1px;
+}
+
+.foot {
+  margin-bottom: -120px;
+}
+#down {
+  padding-bottom: 30px;
+}
+#down button {
+  text-align: center;
+  color: white;
+  padding: 5px;
+  border-radius: 20%;
+  background-color: rgb(34, 34, 31);
+  margin-left: 50%;
+}
+.logo img {
+  width: 50px;
+  height: auto;
+  border-radius: 15%;
+}
+.work {
+  margin: auto;
+  padding-bottom: 20px;
+}
+.work .col {
+  margin-bottom: 20px;
+}
+.work p {
+  margin-left: 40%;
+  margin-right: 40%;
+  font-size: 35px;
+  color: yellow;
+  text-align: center;
+  margin-bottom: 50px;
+  font-weight: bolder;
+}
+@media screen and (max-width: 415px) {
+  .work p {
+    padding-top: 40px;
+    font-size: 18px;
     color: yellow;
     text-align: center;
+    text-align: center;
     margin-bottom: 50px;
-    font-weight: bolder;
-}
-@media  screen and  (max-width:415px){
-    .work p{
-        padding-top: 40px;
-        font-size: 18px;
-        color: yellow;
-        text-align: center;
-        text-align: center;
-        margin-bottom: 50px;
-    }
+  }
 }
